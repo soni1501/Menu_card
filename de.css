@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,600');
+
+html { 
+
+background: url("bg.jpg") 
+ no-repeat 
+    center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.back{
+min-height: 100%;
+   background-image: url(bg.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+* {
+  outline: none;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  background: #fdfdfd;
+  font-family: 'Encode Sans Condensed', sans-serif;
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: #212121;
+}
+
+header {
+overflow:hidden;
+z-index:999;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background: black;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+
+
+#nav-container {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
+overflow:hidden;
+z-index:999;
+}
+#nav-container .bg {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 70px);
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  background: #000;
+}
+#nav-container:focus-within .bg {
+  visibility: visible;
+  opacity: .6;
+}
+#nav-container * {
+  visibility: visible;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+  height: 70px;
+  width: 30px;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-left: 25px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.icon-bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #aaa;
+  transition: .3s;
+}
+.icon-bar + .icon-bar {
+  margin-top: 5px;
+}
+
+#nav-container:focus-within .button {
+  pointer-events: none;
+}
+#nav-container:focus-within .icon-bar:nth-of-type(1) {
+  transform: translate3d(0,8px,0) rotate(45deg);
+}
+#nav-container:focus-within .icon-bar:nth-of-type(2) {
+  opacity: 0;
+}
+#nav-container:focus-within .icon-bar:nth-of-type(3) {
+  transform: translate3d(0,-8px,0) rotate(-45deg);
+}
+
+#nav-content {
+  margin-top: 70px;
+  padding: 20px;
+  width: 90%;
+  max-width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 70px);
+  background: #ececec;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  transform: translateX(-100%);
+  transition: transform .3s;
+  will-change: transform;
+  contain: paint;
+}
+
+#nav-content ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#nav-content li a {
+  padding: 10px 5px;
+  display: block;
+  text-transform: uppercase;
+  transition: color .1s;
+}
+
+#nav-content li a:hover {
+  color: #BF7497;
+}
+
+#nav-content li:not(.small) + .small {
+  margin-top: auto;
+}
+
+.small {
+  display: flex;
+  align-self: center;
+}
+
+.small a {
+  font-size: 12px;
+  font-weight: 400;
+  color: #888;
+}
+.small a + a {
+  margin-left: 15px;
+}
+
+#nav-container:focus-within #nav-content {
+  transform: none;
+}
+
+
+
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+a,
+a:visited,
+a:focus,
+a:active,
+a:link {
+  text-decoration: none;
+  outline: 0;
+}
+
+a {
+  color: currentColor;
+  transition: .2s ease-in-out;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+  width: 100%;
+}
+.footer {
+font-family: 'Rouge Script', cursive;
+font-size:20px;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+    height:5%;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+.abc{
+color:white;
+font-size:30px;
+text-align:center;
+}
+[data-tab-content] {
+  
+display: none;
+background: url("bg.jpg") no-repeat 
+    center center fixed; 
+  -webkit-background-size
+ background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.active[data-tab-content] {
+  display: block;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.tabs {
+ display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid brown;
+font-align:left;
+}
+
+.tab {
+ font-size:20px;
+font-weight:bold;
+color:white;
+font-family: 'Parisienne', cursive;
+  cursor: pointer;
+  padding: 5px;
+
+}
+.tab.active {
+ background-color: brown;
+  width:20%
+}
+
+.tab:hover {
+  background-color: brown;
+}
+
+.tab-content {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.con1{
+height:950px;
+
+}
+.con2{
+border-style: outset;
+
+ background-image: url(white.jpg);
+height:1100px;
+
+}
+.img1{
+width:340px;
+height:220px;
+}
+.text{
+background-color: brown;
+}
+.cont{
+font-size:12px;
+color:black;
+}
+.cont .lp{
+font-size:15px;
+}
+.pri{
+text-align:right;
+}
+.cona{
+
+}
+.conb{
+
+}
+.conc{
+
+}
+.img2{
+width:900px;
+height:360px;
+
+
+}
+.main{
+    background-image: url(white.jpg);
+width:900px;
+}
+
+.on{
+
+}
+.on1{
+
+}
+.on2{
+
+}
+.pl{
+font-size:12px;
+
+}
+.as{
+
+width:100px;
+}
+.we{
+left:50%;
+width:300px;
+height:320px;
+
+}
+
+.ab{
+ background-image: url(white.jpg);
+width:900px;
+}
+.ab .sa{
+width:280px;
+height:200px;
+}
+.img2{
+height:500px;
+}
+.pt{
+background-color:red;
+}
+.pt1{
+background-color:blue;
+}
+.pt2{
+background-color:green;
+}
+.oo{
+height:550px;
+
+}
+.ww{
+background-color:red;
+}
+.ww1{
+
+}
+.ww2{
+
+}
+.ww3
+{
+ background-image: url(white.jpg);
+border-style:outset;
+}
+.qq{
+background-color:red;
+}
+.qq1{
+background-color:blue;
+}
+.mm{
+width:100%;
+height:auto;
+}
+.aa{
+ background-image: url(white.jpg);
+border-style:outset;
+}
+.abc{
+font-family: 'Rouge Script', cursive;
+font-size:60px;
+}
+.img2{
+width:100%;
+height:auto;
+}
+.sa{
+width:100%;
+height:auto;
+}
+.ss{
+font-family: 'Rouge Script', cursive;
+font-size:100px;
+}
+.text{
+font-size:25px;
+color:white;
+}
+.bb{
+font-family: 'Rouge Script', cursive;
+font-size:25px;
+}
